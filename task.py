@@ -14,6 +14,7 @@ class Task():
             runtime: time limit for each episode
             target_pos: target/goal (x,y,z) position for the agent
         """
+        print(init_pose, init_velocities, init_angle_velocities, runtime, target_pos)
         # Simulation
         self.sim = PhysicsSim(init_pose, init_velocities, init_angle_velocities, runtime) 
         self.action_repeat = 3
