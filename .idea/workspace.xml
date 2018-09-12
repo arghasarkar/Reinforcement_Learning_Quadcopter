@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88b3e735-6c04-4323-9873-799c89c5fa47" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Quadcopter_Project-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Quadcopter_Project-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quadcopter_Project.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Quadcopter_Project.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/Critic.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/Critic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/DDPG.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/DDPG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/policy_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/policy_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/task.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +22,9 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,7 +72,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -88,6 +88,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,9 +165,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1173" y="131" width="1294" height="867" extended-state="1" />
+    <frame x="1173" y="131" width="1294" height="867" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25364667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2617504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
