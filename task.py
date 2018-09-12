@@ -33,7 +33,9 @@ class Task():
         """Uses current pose of sim to return reward."""
 #         reward = -1 * 0.3 * (abs(self.sim.pose[:3] - self.target_pos)).sum()
 #         reward = np.tanh(reward)
-        reward = 1. - .3*(abs(self.sim.pose[:3] - self.target_pos)).sum() - .5*(abs(self.sim.angular_v.sum())) - .05*(abs(self.sim.angular_accels.sum())) - 0.01 * (abs(self.sim.v.sum())) - 0.01*(abs(self.sim.linear_accel.sum())) + 10* self.sim.v[2] + 10* self.sim.linear_accel[2]
+        reward = 1.  + 1000* self.sim.v[2] + 1000* self.sim.linear_accel[2]
+    
+        #- .3*(abs(self.sim.pose[:3] - self.target_pos)).sum() - .3*(abs(self.sim.angular_v.sum())) - .05*(abs(self.sim.angular_accels.sum())) - 0.01 * (abs(self.sim.v.sum())) - 0.01*(abs(self.sim.linear_accel.sum()))
         
         reward = np.tanh(reward)
         return reward
