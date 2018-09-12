@@ -1,3 +1,11 @@
+import numpy as np
+
+from agents.Actor import Actor
+from agents.Critic import Critic
+from agents.OUNoise import OUNoise
+from agents.ReplayBuffer import ReplayBuffer
+
+
 class DDPG():
     """Reinforcement Learning agent that learns using DDPG."""
     def __init__(self, task):
@@ -33,11 +41,20 @@ class DDPG():
         # Algorithm parameters
         self.gamma = 0.99  # discount factor
         self.tau = 0.01  # for soft update of target parameters
+        
+        # Score tracker 
+        self.score = 0
+        self.best_w = 0
+        self.best_score = -np.inf
 
     def reset_episode(self):
         self.noise.reset()
         state = self.task.reset()
         self.last_state = state
+        
+        self.total_reward = 0.0
+        self.count = 0
+        
         return state
 
     def step(self, action, reward, next_state, done):
@@ -51,6 +68,7 @@ class DDPG():
 
         # Roll over last state and action
         self.last_state = next_state
+        self.count += 1
 
     def act(self, state):
         """Returns actions for given state(s) as per current policy."""
@@ -83,6 +101,10 @@ class DDPG():
         # Soft-update target models
         self.soft_update(self.critic_local.model, self.critic_target.model)
         self.soft_update(self.actor_local.model, self.actor_target.model)
+        
+        self.score = self.total_reward / float(self.count) if self.count else 0.0
+        if self.score > self.best_score:
+            self.best_score = self.score
 
     def soft_update(self, local_model, target_model):
         """Soft update model parameters."""
