@@ -18,6 +18,8 @@ class Task():
         # Simulation
         self.sim = PhysicsSim(init_pose, init_velocities, init_angle_velocities, runtime) 
         self.action_repeat = 3
+        
+        print(self.sim.__str__)
 
         self.state_size = self.action_repeat * 6
         self.action_low = 0
@@ -29,7 +31,10 @@ class Task():
 
     def get_reward(self):
         """Uses current pose of sim to return reward."""
-        reward = -1 * (abs(self.sim.pose[:3] - self.target_pos)).sum()
+#         reward = -1 * 0.3 * (abs(self.sim.pose[:3] - self.target_pos)).sum()
+#         reward = np.tanh(reward)
+        reward = 1. - .3*(abs(self.sim.pose[:3] - self.target_pos)).sum() - .1*(abs(self.sim.angular_v.sum())) - .3*(abs(self.sim.angular_accels.sum()))
+        reward = np.tanh(reward)
         return reward
 
     def step(self, rotor_speeds):

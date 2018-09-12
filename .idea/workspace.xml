@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/agents/Critic.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/Critic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/DDPG.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/DDPG.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/policy_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/policy_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/task.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +164,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1173" y="131" width="1294" height="867" extended-state="0" />
+    <frame x="1173" y="131" width="1294" height="867" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25364667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -179,8 +180,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4106412" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3287858" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.4106412" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3287858" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
