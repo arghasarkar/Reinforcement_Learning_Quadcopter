@@ -14,6 +14,7 @@ class Task():
             runtime: time limit for each episode
             target_pos: target/goal (x,y,z) position for the agent
         """
+        print(init_pose, init_velocities, init_angle_velocities, runtime, target_pos)
         # Simulation
         self.sim = PhysicsSim(init_pose, init_velocities, init_angle_velocities, runtime) 
         self.action_repeat = 3
@@ -28,7 +29,19 @@ class Task():
 
     def get_reward(self):
         """Uses current pose of sim to return reward."""
-        reward = 1.-.3*(abs(self.sim.pose[:3] - self.target_pos)).sum()
+#         reward = -1 * 0.3 * (abs(self.sim.pose[:3] - self.target_pos)).sum()
+#         reward = np.tanh(reward)
+        reward = 1. - 100*(abs(self.sim.pose[:2] - self.target_pos[:2])).sum() - 5*(abs(self.sim.angular_v.sum())) - 3 *(abs(self.sim.angular_accels.sum())) - 3 * (abs(self.sim.v[:2].sum()))  
+    
+        if self.sim.pose[2] > self.target_pos[2]:
+            reward = -50* self.sim.v[2]
+        else:
+            reward = 25* self.sim.v[2]    
+            
+        reward /= reward
+        reward = np.tanh(reward)
+        #
+                             
         return reward
 
     def step(self, rotor_speeds):
@@ -36,6 +49,7 @@ class Task():
         reward = 0
         pose_all = []
         for _ in range(self.action_repeat):
+            print("x: {}, y: {} z: {}".format(self.sim.pose[0], self.sim.pose[1], self.sim.pose[2]))
             done = self.sim.next_timestep(rotor_speeds) # update the sim pose and velocities
             reward += self.get_reward() 
             pose_all.append(self.sim.pose)
