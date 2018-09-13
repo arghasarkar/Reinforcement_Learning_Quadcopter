@@ -44,7 +44,12 @@ class Actor:
         net = layers.Activation(activationFunc)(net)
         net = layers.Dropout(dropoutProb)(net)
         
-        net = layers.Dense(units=32, use_bias=False)(net)
+        net = layers.Dense(units=128, use_bias=False)(net)
+        net = layers.BatchNormalization()(net)
+        net = layers.Activation(activationFunc)(net)
+        net = layers.Dropout(dropoutProb)(net)
+        
+        net = layers.Dense(units=64, use_bias=False)(net)
         net = layers.BatchNormalization()(net)
         net = layers.Activation(activationFunc)(net)
         net = layers.Dropout(dropoutProb)(net)

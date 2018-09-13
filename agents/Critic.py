@@ -41,6 +41,11 @@ class Critic:
         net_states = layers.BatchNormalization()(net_states)
         net_states = layers.Activation(activationFunc)(net_states)
         net_states = layers.Dropout(dropoutProb)(net_states)
+        
+        net_states = layers.Dense(units=128, use_bias=False)(net_states)
+        net_states = layers.BatchNormalization()(net_states)
+        net_states = layers.Activation(activationFunc)(net_states)
+        net_states = layers.Dropout(dropoutProb)(net_states)
 
         # Add hidden layer(s) for action pathway
         net_actions = layers.Dense(units=32, use_bias=False)(actions)
@@ -49,6 +54,11 @@ class Critic:
         net_actions = layers.Dropout(dropoutProb)(net_actions)
         
         net_actions = layers.Dense(units=64, use_bias=False)(net_actions)
+        net_actions = layers.BatchNormalization()(net_actions)
+        net_actions = layers.Activation(activationFunc)(net_actions)
+        net_actions = layers.Dropout(dropoutProb)(net_actions)
+        
+        net_actions = layers.Dense(units=128, use_bias=False)(net_actions)
         net_actions = layers.BatchNormalization()(net_actions)
         net_actions = layers.Activation(activationFunc)(net_actions)
         net_actions = layers.Dropout(dropoutProb)(net_actions)
