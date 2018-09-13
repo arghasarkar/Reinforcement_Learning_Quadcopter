@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88b3e735-6c04-4323-9873-799c89c5fa47" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Quadcopter_Project-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Quadcopter_Project-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quadcopter_Project.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Quadcopter_Project.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/Actor.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/Actor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/Critic.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/Critic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/task.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +62,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1173" />
     <option name="y" value="131" />
     <option name="width" value="1294" />
