@@ -28,9 +28,9 @@ class DDPG():
         self.actor_target.model.set_weights(self.actor_local.model.get_weights())
 
         # Noise process
-        self.exploration_mu = 0
-        self.exploration_theta = 0.15
-        self.exploration_sigma = 0.2
+        self.exploration_mu = 0.2
+        self.exploration_theta = 0.35
+        self.exploration_sigma = 0.4
         self.noise = OUNoise(self.action_size, self.exploration_mu, self.exploration_theta, self.exploration_sigma)
 
         # Replay memory
@@ -39,8 +39,8 @@ class DDPG():
         self.memory = ReplayBuffer(self.buffer_size, self.batch_size)
 
         # Algorithm parameters
-        self.gamma = 0.99  # discount factor
-        self.tau = 0.01  # for soft update of target parameters
+        self.gamma = 0.90  # discount factor
+        self.tau = 0.0005  # for soft update of target parameters
         
         # Score tracker 
         self.score = 0
